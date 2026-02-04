@@ -3,9 +3,10 @@
 /**
  * Opus 4.5 Agent Runner
  * 
- * Этот скрипт демонстрирует запуск агента на модели Opus 4.5 в режиме "agent".
+ * Этот модуль предназначен для запуска агентов на модели Opus 4.5 в режиме "agent".
  * Он читает конфигурацию из .github/agents/opus-4.5-agent.json,
  * отправляет запрос к API и логирует ответ.
+ * Модуль может использоваться как standalone скрипт или импортироваться в другие приложения.
  */
 
 const fs = require('fs');
@@ -19,7 +20,7 @@ const CONFIG_PATH = path.join(__dirname, '..', '.github', 'agents', 'opus-4.5-ag
 const API_ENDPOINT = process.env.OPUS_API_ENDPOINT || 'https://api.anthropic.com/v1/messages';
 
 // API ключ из переменной окружения
-const API_KEY = process.env.OPUS_API_KEY || process.env.ANTHROPIC_API_KEY || process.env.OPENAI_API_KEY;
+const API_KEY = process.env.OPUS_API_KEY || process.env.ANTHROPIC_API_KEY;
 
 /**
  * Читает конфигурацию агента из JSON файла
@@ -40,7 +41,7 @@ function readAgentConfig() {
 function runAgent(config) {
   if (!API_KEY) {
     console.error('❌ Ошибка: не установлен API ключ!');
-    console.error('Пожалуйста, установите переменную окружения OPUS_API_KEY, ANTHROPIC_API_KEY или OPENAI_API_KEY');
+    console.error('Пожалуйста, установите переменную окружения OPUS_API_KEY или ANTHROPIC_API_KEY');
     process.exit(1);
   }
 

@@ -9,7 +9,6 @@ COPY agents/ ./agents/
 COPY .github/agents/ ./.github/agents/
 
 # Установка метаданных
-LABEL maintainer="Your Name <your.email@example.com>"
 LABEL description="Opus 4.5 Agent Runner"
 LABEL version="1.0.0"
 

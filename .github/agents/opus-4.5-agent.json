@@ -2,7 +2,7 @@
   "name": "opus-4.5-agent",
   "model": "opus-4.5",
   "mode": "agent",
-  "initial_message": "Запустите субагента 'opus-4.5-agent' с помощью инструмента runSubagent и передайте запрос: 'Сколько времени в Лондоне, Великобритания?'.",
+  "initial_message": "Запустите субагента 'time-agent' с помощью инструмента runSubagent и передайте запрос: 'Сколько времени в Лондоне, Великобритания?'.",
   "tools": [
     {
       "name": "runSubagent",
