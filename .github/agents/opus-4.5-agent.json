@@ -1,0 +1,26 @@
+{
+  "name": "opus-4.5-agent",
+  "model": "opus-4.5",
+  "mode": "agent",
+  "initial_message": "Запустите субагента 'time-agent' с помощью инструмента runSubagent и передайте запрос: 'Сколько времени в Лондоне, Великобритания?'.",
+  "tools": [
+    {
+      "name": "runSubagent",
+      "description": "Запускает субагента с указанным именем и передаёт ему входные данные для обработки",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Имя субагента для запуска"
+          },
+          "input": {
+            "type": "string",
+            "description": "Входной запрос для передачи субагенту"
+          }
+        },
+        "required": ["name", "input"]
+      }
+    }
+  ]
+}
